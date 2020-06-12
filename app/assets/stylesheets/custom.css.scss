@@ -5,6 +5,10 @@ h1 {
   color: #fff!important;
 }
 
+html {
+  height: 100vh;
+}
+
 .navbar {
 
 background-color: rgb(187, 187, 189) !important;
@@ -25,7 +29,7 @@ background-color: rgb(187, 187, 189) !important;
 }
  
 #home-container{
-    margin-top: 25px;
+    padding-top: 25px;
 }
 
 .jumbotron {
@@ -33,22 +37,40 @@ background-color: rgb(187, 187, 189) !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 425px;
+    height: 100vh;
 }
 
-html,
-body {
+// html,
+// body {
+//   // height: 100%;
+// }
+
+
+.page-content {
   height: 100%;
+  background-color: lightgray;
+
 }
 
 #page-content {
   flex: 1 0 auto;
   background-color: lightgray;
+  height: 100vh;
 }
 
-#sticky-footer {
-  flex-shrink: none;
+
+@media(min-width: 375px){
+    #page-content {
+    flex: 1 0 auto;
+    background-color: lightgray;
+    height: 100vh;
+  }
 }
+
+
+// #sticky-footer {
+//   flex-shrink: none;
+// }
 
 // .navbar-brand {
 
@@ -58,9 +80,9 @@ body {
 
  
 
-h1 {
-color: red;
-}
+// h1 {
+// color: red;
+// }
 
 
 // pagination start
