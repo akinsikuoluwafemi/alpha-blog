@@ -10,9 +10,7 @@ html {
 }
 
 .navbar {
-
 background-color: rgb(187, 187, 189) !important;
-
 }
 
 .nav-link {
@@ -37,13 +35,13 @@ background-color: rgb(187, 187, 189) !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    // height: 100vh;
 }
 
-// html,
-// body {
-//   // height: 100%;
-// }
+html,
+body {
+  // height: 100%;
+}
 
 
 .page-content {
