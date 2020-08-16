@@ -7,8 +7,7 @@ class CategoriesController < ApplicationController
     def create
         @category = Category.create(category_params)
         if @category.save
-            flash[:notice] = "Category was successfullty cteated"
-            redirect_to @category
+            flash
         else
             render 'new'
         end
@@ -20,12 +19,6 @@ class CategoriesController < ApplicationController
 
     def show
 
-    end
-
-    private
-
-    def category_params 
-        params.require(:category).permit(:name)
     end
 
 end
