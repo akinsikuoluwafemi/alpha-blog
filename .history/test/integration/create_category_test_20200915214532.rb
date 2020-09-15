@@ -4,7 +4,8 @@ class CreateCategoryTest < ActionDispatch::IntegrationTest
    setup do
     @admin_user = User.create(username: "johndoe", email: "johndoe@example.com",
                              password: "password", admin: true)
-    sign_in_as(@admin_user)
+    # create a category variable initially because
+    #  an instance variable clears up when individual test run
   end
 
   test "get new category form and create category" do

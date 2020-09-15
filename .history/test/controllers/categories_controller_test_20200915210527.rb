@@ -3,8 +3,7 @@ require 'test_helper'
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @category = Category.create(name: "Sports")
-    @admin_user = User.create(username: "johndoe", email: "johndoe@example.com",
-                             password: "password", admin: true)
+    @admin_user = User.create(username: "johndoe", email: "johndoe@example.com")
     # create a category variable initially because
     #  an instance variable clears up when individual test run
   end
@@ -15,13 +14,11 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    sign_in_as(@admin_user)
     get new_category_url
     assert_response :success 
   end
 
   test "should create category" do
-    sign_in_as(@admin_user)
     assert_difference('Category.count', 1) do
       post categories_url, params: { category: { name: "Travel" } }
     end

@@ -4,7 +4,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @category = Category.create(name: "Sports")
     @admin_user = User.create(username: "johndoe", email: "johndoe@example.com",
-                             password: "password", admin: true)
+                             password: "password", admin: true )
     # create a category variable initially because
     #  an instance variable clears up when individual test run
   end
