@@ -1,0 +1,34 @@
+<h1 class="text-center pt-4">Categories</h1>
+
+
+<div class="container">
+
+    <div class="container">
+
+    <% @categories.each do |category| %>
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-lg-4 mt-4">
+                <div class="card text-center shadow mb-5 bg-white rounded">
+                   
+                    <div class="card-body">
+                        <h5 class="card-title"> <%= link_to category.name, _path(), class: "text-success" %> </h5>
+                        <p class="card-text"> <%= truncate(.description,length: 100) %> .</p>
+                        <%= link_to "View", _path(), class: "btn btn btn-outline-success" %>
+
+                        <% if logged_in? &&( .user == current_user || current_user.admin?  )%>
+                            <%= link_to "Edit", edit__path(), class: "btn btn btn-outline-info" %>
+                            <%= link_to "Delete", _path(), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn btn-outline-danger" %>
+
+                        <%end%>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small>Created <%= time_ago_in_words(.created_at)%> ago, 
+                        edited <%= time_ago_in_words(.updated_at)  %> ago</small>  
+                    </div>
+                </div>
+            </div>
+        </div>        
+    <%end%>
+</div>
+
+

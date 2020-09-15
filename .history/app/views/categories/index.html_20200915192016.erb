@@ -5,11 +5,6 @@
 
     <div class="container">
 
-    <div class="flickr_pagination">
-        <%= will_paginate @categories, :container => false %>
-    </div>
-
-
     <% @categories.each do |category| %>
         <div class="row justify-content-md-center">
             <div class="col-12 col-lg-4 mt-4">
@@ -29,7 +24,4 @@
     <%end%>
 </div>
 
-<div class="flickr_pagination pb-4">
-    <%= will_paginate @categories, :container => false %>
-</div>
 
